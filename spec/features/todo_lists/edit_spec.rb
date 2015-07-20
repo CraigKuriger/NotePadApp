@@ -33,6 +33,9 @@ describe 'Editing todo lists' do
 
 	it "displays an error with no title" do
 		update_todo_list todo_list: todo_list, title: ""
+		title = todo_list.title
+		todo_list.reload
+		expect(todo_list.title).to eq(title)
 		expect(page).to have_content('error')
 	end
 
