@@ -14,7 +14,6 @@ describe "Completing todo items" do
     expect(todo_item.completed_at).to_not be_nil
   end
 
-
   context "with completed items" do
     let!(:completed_todo_item) { todo_list.todo_items.create(content: "Eggs", completed_at: 5.minutes.ago) }
 
@@ -32,4 +31,5 @@ describe "Completing todo items" do
       end
     end
   end
+  
 end
