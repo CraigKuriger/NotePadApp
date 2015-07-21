@@ -9,6 +9,13 @@
 </head>
 <body>
 
+<div>
+	<h1><%= link_to "NotePad", root_path %></h1>
+	<ul>
+		<li><%= link_to "Todo Lists", todo_lists_path %></li>
+	</ul>
+</div>
+
 	<% flash.each do |type, message| %>
 	<div class="alert alert-danger flash <%= type %>">
 		<%= message %>
