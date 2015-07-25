@@ -62,7 +62,8 @@ body {
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 225px;
+        padding-left: 250px;
+        padding-right: 25px;
     }
 
     #page-wrapper {
