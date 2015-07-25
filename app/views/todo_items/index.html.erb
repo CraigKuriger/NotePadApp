@@ -11,14 +11,15 @@
                 <h3 class="panel-title"><i class="fa fa-long-arrow-right"></i> <%= todo_item.content %></h3>
             </div>
             <div class="panel-body">
-				<%= link_to "Edit", edit_todo_list_todo_item_path(todo_item) %>
-			<%= link_to "Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "Are you sure?" } %>
+				<a><%= link_to " Edit", edit_todo_list_todo_item_path(todo_item), class: "fa fa-pencil" %></a>
+				<a><%= link_to " Delete", todo_list_todo_item_path(todo_item), method: :delete, data: { confirm: "Are you sure?" }, class: "fa fa-trash-o pull-right" %></a>
+					<hr>
                     <div class="text-right">
                     <a><% if todo_item.completed? %>
-					<%= todo_item.completed_at %>
+					<i class="fa fa-check"></i> <%= todo_item.completed_at %>
 				<% else %>
-					<%= link_to "Mark Complete", complete_todo_list_todo_item_path(todo_item), method: :patch %>
-				<% end %><i class="fa fa-arrow-circle-right"></i></a>
+					<%= link_to " Mark Complete", complete_todo_list_todo_item_path(todo_item), method: :patch, class: "fa fa-check" %>
+				<% end %></a>
                     </div>
              </div>
         </div>
@@ -26,7 +27,9 @@
     <% end %>
 </div>
 
-
-
 <hr>
-<p><%= link_to "New Todo Item", new_todo_list_todo_item_path %></p>
+<div class="row">	
+	<div class="col-sm-12">
+			<h1 class="panel panel-green"><%= link_to " New Todo Item", new_todo_list_todo_item_path, class: "fa fa-check" %></h1>
+	</div>
+</div>
