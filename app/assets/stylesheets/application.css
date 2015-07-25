@@ -64,6 +64,7 @@ body {
     #wrapper {
         padding-left: 250px;
         padding-right: 25px;
+        padding-top: 5px;
     }
 
     #page-wrapper {
@@ -262,4 +263,12 @@ ul.alert-dropdown {
 
 .panel-yellow > a:hover {
     color: #df8a13;
+}
+
+/*.orange {
+    background-color: #F15A29;
+}*/
+
+.panel-default > .panel-heading {
+  background-color: #EDEDED;
 }
