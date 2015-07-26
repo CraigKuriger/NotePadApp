@@ -261,3 +261,7 @@ ul.alert-dropdown {
     color: white;
 
 }
+
+.table-bordered>tbody>tr>td:hover {
+    background-color: #F15A29;
+}

@@ -57,10 +57,10 @@
 	                <a class="side-nav-text" href="#" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Quick Lists <i class="fa fa-fw fa-caret-down"></i></a>
 	                <ul id="demo" class="collapse">
 	                    <li>
-	                        <a href="#">Dropdown Item</a>
-	                    </li>
-	                    <li>
-	                        <a href="#">Dropdown Item</a>
+	                    	<% @todo_lists = TodoList.all %>
+	                    	<% @todo_lists.each do |todo_list| %>
+	                        <%= link_to todo_list.title, todo_list_todo_items_path(todo_list) %>
+	                        <% end %>
 	                    </li>
 	                </ul>
 	            </li>
