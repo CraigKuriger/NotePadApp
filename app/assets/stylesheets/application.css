@@ -36,7 +36,7 @@ div.flash.notice {
 
 body {
     margin-top: 100px;
-    font-family: 'Montserrat';
+    font-family: 'Droid Sans', sans-serif;
 }
 
 @media(min-width:768px) {
