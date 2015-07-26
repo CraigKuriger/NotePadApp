@@ -1,6 +1,13 @@
-<h1>Editing Todo List</h1>
+<div class="row"> 
+  <div class="col-sm-8">
+    <h1 class="well">Edit</h1>
+  </div>
+  <div class="col-sm-8">
+	<div class="well">
+	<%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @todo_list %> |
-<%= link_to 'Back', todo_lists_path %>
+	<%= link_to 'Show', @todo_list %> |
+	<%= link_to 'Back', todo_lists_path %>
+	</div>
+  </div>
+</div>

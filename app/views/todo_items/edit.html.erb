@@ -1,7 +1,12 @@
-<h1><%= @todo_list.title %> - Editing</h1>
-
-<%= form_for [@todo_list, @todo_item] do |form| %>
-
-<%= render partial: form %>
-
-<% end %>
+<div class="row"> 
+  <div class="col-sm-8">
+    <h1 class="well"><%= @todo_list.title %> - Edit</h1>
+  </div>
+  <div class="col-sm-8">
+	<div class="well">
+		<%= form_for [@todo_list, @todo_item] do |form| %>
+		<%= render partial: form %>
+		<% end %>
+	</div>
+  </div>
+</div>

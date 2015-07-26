@@ -36,7 +36,7 @@ div.flash.notice {
 
 body {
     margin-top: 100px;
-/*    background-color: #222;*/
+    font-family: 'Montserrat';
 }
 
 @media(min-width:768px) {
@@ -52,7 +52,6 @@ body {
 #page-wrapper {
     width: 100%;
     padding: 0;
-/*    background-color: #fff;*/
 }
 
 .huge {
@@ -122,6 +121,12 @@ body {
 
 .top-nav>.open>.dropdown-menu>li>a {
     white-space: normal;
+}
+
+.top-nav>.open>.dropdown-menu>li>a:hover {
+    white-space: normal;
+    text-decoration: none;
+    background-color: #F15A29;
 }
 
 ul.message-dropdown {
@@ -259,9 +264,23 @@ ul.alert-dropdown {
     background-color: #f58560;
     border-color: #F15A29;
     color: white;
-
 }
 
 .table-bordered>tbody>tr>td:hover {
+    background-color: #F15A29;
+}
+
+.btn:hover{
+    text-decoration: none;
+    background-color: #F15A29;
+}
+
+.fa:hover{
+    text-decoration: none;
+    background-color: #F15A29;
+}
+
+a:hover {
+    text-decoration: none;
     background-color: #F15A29;
 }

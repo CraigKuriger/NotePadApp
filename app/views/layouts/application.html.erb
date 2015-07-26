@@ -12,6 +12,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <div id="wrapper">
@@ -26,24 +27,17 @@
 	        </button>
 	        <p><%= link_to (image_tag "toplogo.png", :class => "toplogo"), root_path, class:"navbar-brand"%></p>
 	    </div>
-	    <!-- Top Menu Items -->
-	    <ul class="nav navbar-right top-nav">
 
+	    <ul class="nav navbar-right top-nav">
 	        <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> John Smith <b class="caret"></b></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-spinner fa-spin"></i> About <b class="caret"></b></a>
 	            <ul class="dropdown-menu">
 	                <li>
-	                    <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
-	                </li>
-	                <li>
-	                    <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
-	                </li>
-	                <li>
-	                    <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+	                    <p> This app was created by Craig Kuriger using Ruby on Rails</p>
 	                </li>
 	                <li class="divider"></li>
 	                <li>
-	                    <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+	                    <a href="http://craigkuriger.github.io"><i class="fa fa-fw fa-user"></i> Contact</a>
 	                </li>
 	            </ul>
 	        </li>
@@ -51,10 +45,10 @@
 	    <div class="collapse navbar-collapse navbar-ex1-collapse">
 	        <ul class="nav navbar-nav side-nav">
 	            <li>
-	                <a class="side-nav-text" href="#"><i class="fa fa-fw fa-wrench side-nav-text"></i>Bootstrap Grid</a>
+	            	<%= link_to ' New Todo List', new_todo_list_path, class: "side-nav-text fa fa-check" %>
 	            </li>
 	            <li>
-	                <a class="side-nav-text" href="#" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Quick Lists <i class="fa fa-fw fa-caret-down"></i></a>
+	                <a class="side-nav-text" href="#" data-toggle="collapse" data-target="#demo"><i class="fa fa-pencil-square-o"></i> View Lists</i></a>
 	                <ul id="demo" class="collapse">
 	                    <li>
 	                    	<% @todo_lists = TodoList.all %>
@@ -66,7 +60,6 @@
 	            </li>
 	        </ul>
 	    </div>
-	    <!-- /.navbar-collapse -->
 	</nav>
 
 		<% flash.each do |type, message| %>

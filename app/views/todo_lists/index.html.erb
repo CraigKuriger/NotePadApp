@@ -5,7 +5,7 @@
     <h1 class="well">Todo Lists</h1>
   </div>
   <div class="col-sm-4">
-      <h1 class="btn btn-default pull-right"><%= link_to 'New Todo list', new_todo_list_path, class: "fa fa-check" %></h1>
+      <h1 class="btn btn-default pull-right"><%= link_to ' New Todo List', new_todo_list_path, class: "fa fa-check" %></h1>
   </div>
 </div>
 
@@ -18,7 +18,7 @@
           <tr>
             <th>Title</th>
             <th>Description</th>
-            <th>List Items</th>
+            <th>List</th>
             <th>Show</th>
             <th>Edit</th>
             <th>Destroy</th>
@@ -28,12 +28,12 @@
         <tbody>
           <% @todo_lists.each do |todo_list| %>
             <tr id='<%= dom_id(todo_list) %>'>
-              <td><%= todo_list.title %></td>
-              <td><%= todo_list.description %></td>
-              <td><%= link_to "List Items", todo_list_todo_items_path(todo_list) %></td>
-              <td><%= link_to 'Show', todo_list %></td>
-              <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-              <td><%= link_to 'Destroy', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <td><%= link_to todo_list.title, todo_list_todo_items_path(todo_list)%></td>
+              <td><%= link_to todo_list.description, todo_list_todo_items_path(todo_list)%></td>
+              <td><%= link_to "", todo_list_todo_items_path(todo_list), class: "fa fa-calendar-o fa-2x" %></td>
+              <td><%= link_to '', todo_list, class: "fa fa-calendar fa-2x" %></td>
+              <td><%= link_to '', edit_todo_list_path(todo_list), class: "fa fa-pencil fa-2x" %></td>
+              <td><%= link_to '', todo_list, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o fa-2x" %></td>
             </tr>
           <% end %>
         </tbody>
