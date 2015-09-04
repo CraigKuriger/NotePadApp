@@ -1,17 +1,23 @@
 require 'spec_helper'
 
 describe "Creating todo lists" do
+		let(:user) {create(:user)}
 
 	def create_todo_list(options={})
 		options[:title] ||= "My todo list"
 		options[:description] ||= "This is my todo list description"
+
 		visit "/todo_lists"
-		click_link "New Todo list"
+		click_link "New Todo List"
 		expect(page).to have_content("New Todo List")
 
 		fill_in "Title", with: options[:title]
 		fill_in "Description", with: options[:description]
-		click_button "Create Todo list"
+		first(:button, "Create Todo list").click
+	end
+
+	before do
+		sign_in user, password: "qwerty123"
 	end
 
 	it "redirects to todo list index page on success" do

@@ -29,20 +29,33 @@ describe TodoListsController do
   # in order to pass any filters (e.g. authentication) defined in
   # TodoListsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  let!(:user) {create(:user)}
+
+  before do
+    sign_in(user)
+  end
 
   describe "GET index" do
-    it "assigns all todo_lists as @todo_lists" do
-      todo_list = TodoList.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:todo_lists).should eq([todo_list])
+    context "logged in" do
+      it "assigns all todo_lists as @todo_lists" do
+        todo_list = user.todo_lists.create! valid_attributes
+        get :index, {}, valid_session
+        assigns(:todo_lists).should eq([todo_list])
+        expect(assigns(:todo_lists).map(&:user)).to eq([user])
+      end
     end
   end
 
   describe "GET show" do
-    it "assigns the requested todo_list as @todo_list" do
+    it "assigns all todo_lists as @todo_list" do
       todo_list = TodoList.create! valid_attributes
       get :show, {:id => todo_list.to_param}, valid_session
       assigns(:todo_list).should eq(todo_list)
+    end
+    it "does not load other users todo_lists" do
+      other_todo_list = TodoList.create!(valid_attributes.merge(user_id: create(:user).id))
+      get :index, {}, valid_session
+      expect(assigns(:todo_lists)).to_not include(other_todo_list)
     end
   end
 
@@ -78,6 +91,18 @@ describe TodoListsController do
       it "redirects to the created todo_list" do
         post :create, {:todo_list => valid_attributes}, valid_session
         response.should redirect_to(TodoList.last)
+      end
+
+      it "creates a todo list for the current user" do
+        post :create, {:todo_list => valid_attributes}, valid_session
+        todo_list = TodoList.last
+        expect(todo_list).to eq(user)
+      end
+      it "does not allow other users to create todo_lists for other users" do
+        other_user = create(:user)
+        post :create, {:todo_list => valid_attributes.merge(user_id: other_user.id)}, valid_session
+        todo_list = TodoList.last
+        expect(todo_list).to eq(user)
       end
     end
 
