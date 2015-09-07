@@ -48,26 +48,16 @@
 	            <li>
 	            	<%= link_to ' New Todo List ', new_todo_list_path, class: "side-nav-text fa fa-check" %>
 	            </li>
-	   
+	   		<% if logged_in? %>
 	            <li>
-	            	<%= link_to "Log Out", logout_path, method: :delete %>
+	            	<%= link_to " Log Out", logout_path, class: "fa fa-sign-out", method: :delete %>
 	            </li>
-	       
+	        <% else %>
 	            <li>
-	            	<%= link_to ' Sign Up', new_user_path, class: "side-nav-text fa fa-check" %>
+	            	<%= link_to ' Sign Up', new_user_path, class: "side-nav-text fa fa-sign-in" %>
 	            </li>
-	   
-	            <li>
-	                <a class="side-nav-text" href="#" data-toggle="collapse" data-target="#demo"><i class="fa fa-pencil-square-o"></i> View Lists</i></a>
-	                <ul id="demo" class="collapse">
-	                    <li>
-	                    	<% @todo_lists = TodoList.all %>
-	                    	<% @todo_lists.each do |todo_list| %>
-	                        <%= link_to todo_list.title, todo_list_todo_items_path(todo_list) %>
-	                        <% end %>
-	                    </li>
-	                </ul>
-	            </li>
+	   		<% end %>
+
 	        </ul>
 	    </div>
 	</nav>
