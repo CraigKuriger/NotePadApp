@@ -48,9 +48,15 @@
 	            <li>
 	            	<%= link_to ' New Todo List ', new_todo_list_path, class: "side-nav-text fa fa-check" %>
 	            </li>
+	   
+	            <li>
+	            	<%= link_to "Log Out", logout_path, method: :delete %>
+	            </li>
+	       
 	            <li>
 	            	<%= link_to ' Sign Up', new_user_path, class: "side-nav-text fa fa-check" %>
 	            </li>
+	   
 	            <li>
 	                <a class="side-nav-text" href="#" data-toggle="collapse" data-target="#demo"><i class="fa fa-pencil-square-o"></i> View Lists</i></a>
 	                <ul id="demo" class="collapse">

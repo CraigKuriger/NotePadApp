@@ -42,10 +42,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'spring'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails'
+
 # end
 
 # group :test do
 	gem 'capybara', '~> 2.3.0'
 	gem 'shoulda-matchers'
+  gem 'capybara-email'
 # end
 
