@@ -26,19 +26,19 @@
 	            <span class="icon-bar"></span>
 	            <span class="icon-bar"></span>
 	        </button>
-	        <p><%= link_to (image_tag "toplogo.png", :class => "toplogo"), root_path, class:"navbar-brand"%></p>
+	        <p><%= link_to (image_tag "toplogo.png", :class => "toplogo"), todo_lists_path, class:"navbar-brand"%></p>
 	    </div>
 
 	    <ul class="nav navbar-right top-nav">
 	        <li class="dropdown">
-	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-spinner fa-spin"></i> About <b class="caret"></b></a>
+	            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-info-circle"></i> About <b class="caret"></b></a>
 	            <ul class="dropdown-menu">
 	                <li>
 	                    <p> This app was created by Craig Kuriger using Ruby on Rails</p>
 	                </li>
 	                <li class="divider"></li>
 	                <li>
-	                    <a href="http://craigkuriger.github.io"><i class="fa fa-fw fa-user"></i> Contact</a>
+	                    <a href="http://craigkuriger.com"><i class="fa fa-fw fa-user"></i> Contact</a>
 	                </li>
 	            </ul>
 	        </li>
@@ -55,6 +55,9 @@
 	        <% else %>
 	            <li>
 	            	<%= link_to ' Sign Up', new_user_path, class: "side-nav-text fa fa-sign-in" %>
+	            </li>
+	            <li>
+	            	<%= link_to ' Sign In', new_user_session_path, class: "side-nav-text fa fa-sign-in" %>
 	            </li>
 	   		<% end %>
 

@@ -14,7 +14,7 @@
  *= require_self
  */
 
-/*div.alert {
+div.alert {
 	border: 2px solid #aaa;
 	padding: 10px;
 }
@@ -22,17 +22,20 @@
 div.flash.success {
 	border: 2px solid green;
 	color: green;
+    background-color: white;
 }
 
 div.flash.error {
 	border: 2px solid red;
 	color: red;
+    background-color: white;
 }
 
 div.flash.notice {
 	border: 2px solid blue;
 	color: blue;
-}*/
+    background-color: white;
+}
 
 body {
     margin-top: 100px;
@@ -284,3 +287,4 @@ a:hover {
     text-decoration: none;
     background-color: #F15A29;
 }
+

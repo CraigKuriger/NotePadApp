@@ -3,6 +3,14 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   add_flash_types :success
+  # before_action :set_a_flash_message
+
+  # private
+  # def set_a_flash_message
+  #   flash.now[:success] = "success"
+  #   flash.now[:notice] = "notice"
+  #   flash.now[:error] = "error"
+  # end
 
   private
   def logged_in?
