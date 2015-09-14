@@ -62,6 +62,16 @@ body {
     line-height: normal;
 }
 
+@media(min-width:375px) {
+    #wrapper {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 5px;
+    }
+        #page-wrapper {
+        padding: 10px;
+    }
+}
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -73,6 +83,7 @@ body {
         padding: 10px;
     }
 }
+
 
 /* Top Navigation */
 .navbar {
@@ -286,5 +297,9 @@ ul.alert-dropdown {
 a:hover {
     text-decoration: none;
     background-color: #F15A29;
+}
+
+.main-image {
+    max-width: 100%;
 }
 

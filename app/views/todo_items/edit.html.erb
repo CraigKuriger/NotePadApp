@@ -7,6 +7,8 @@
 		<%= form_for [@todo_list, @todo_item] do |form| %>
 		<%= render partial: form %>
 		<% end %>
+		<br>
+		<%= link_to " Delete", todo_list_todo_item_path(@todo_list, @todo_item), method: :delete, data: {confirm: "Are you sure?"}, class: "fa fa-trash" %>
 	</div>
   </div>
 </div>

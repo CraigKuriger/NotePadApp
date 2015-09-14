@@ -29,7 +29,7 @@ class TodoListsController < ApplicationController
 
     respond_to do |format|
       if @todo_list.save
-        format.html { redirect_to @todo_list, notice: 'Todo list was successfully created.' }
+        format.html { redirect_to todo_list_todo_items_path(@todo_list), success: 'Todo list was successfully created.' }
         format.json { render :show, status: :created, location: @todo_list }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class TodoListsController < ApplicationController
   def update
     respond_to do |format|
       if @todo_list.update(todo_list_params)
-        format.html { redirect_to @todo_list, notice: 'Todo list was successfully updated.' }
+        format.html { redirect_to todo_list_todo_items_path(@todo_list), success: 'Todo list was successfully updated.' }
         format.json { render :show, status: :ok, location: @todo_list }
       else
         format.html { render :edit }
